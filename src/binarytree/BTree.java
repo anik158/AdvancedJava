@@ -11,6 +11,11 @@ public class BTree {
         bst.insert(12);
         bst.insert(18);
 
-        bst.displayInOrder(bst.root);
+        System.out.println("Inorder Printing: ");
+        bst.inOrder();
+        System.out.println("\nPre-order Printing: ");
+        bst.preOrder();
+        System.out.println("\nMax:"+ bst.max());
+        System.out.println("Min:"+bst.min());
     }
 }

@@ -39,17 +39,53 @@ public void insert(T data){
         }
 }
 
-    public void displayInOrder(Node<T> node) {
 
-        if (node == null) {
-            return;
-        }
 
-        displayInOrder(node.left);
-        System.out.print(node.data + " ");
-        displayInOrder(node.right);
+    public void inOrder(){
+        inOrder(root);
     }
 
+    private void inOrder(Node<T> n){
 
+        if(n==null){
+           return;
+        }
+        inOrder(n.left);
+        System.out.print(n.getData()+" ");
+        inOrder(n.right);
+    }
 
+    public void preOrder(){
+        preOrder(root);
+    }
+
+    private void preOrder(Node<T> n){
+
+        if(n==null){
+           return;
+        }
+
+        System.out.print(n.getData()+" ");
+        preOrder(n.left);
+        preOrder(n.right);
+    }
+
+    public T min(){
+        Node<T> current = root;
+
+        while (current.left!=null){
+            current = current.left;
+        }
+
+        return current.getData();
+    }
+
+    public T max(){
+        Node<T> current = root;
+
+        while(current.right!=null){
+            current = current.right;
+        }
+        return current.getData();
+    }
 }
